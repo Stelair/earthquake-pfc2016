@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Descripción de la web">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>Earhquake</title>
+	<link rel="stylesheet" href="css/main.css">
+
+	<!--[if lte IE 8]>
+
+	<![endif]-->
+
+	<!--[if lte IE 9]>
+
+	<![endif]-->
+
+	<link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="icons/favicon.ico" type="image/x-icon">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+	<link rel="manifest" href="icons/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<header>
+		<div class="sis-wrapper">
+			<h1 class="sis-logo">
+				<a href="#">
+					<img src="icons/logo.png" alt="Earthquake" />
+					<span>Earthquake</span>
+				</a>
+			</h1>
+		</div><!-- /.sis-wrapper -->
+	</header>
+
+	
+
+
+	<section id="sis_map" class="sis-map">
+		<div id="map_epicenter" class="sis-map-epicenter"></div><!-- /#map_epicenter -->
+		<div id="sis_cargando">
+			<div  class="spinner">
+				<div class="rect1"></div>
+				<div class="rect2"></div>
+				<div class="rect3"></div>
+				<div class="rect4"></div>
+				<div class="rect5"></div>
+			</div>
+		</div><!-- /#sis_cargando -->
+	</section><!-- /.sis-info -->
+
+	<section class="sis-filters">
+		<div class="sis-filter">
+			<h2>Última hora</h2>
+			<ul>
+				<li><a id="past_hour_m4" href="#">M4.5+ Earthquakes</a></li>
+				<li><a id="past_hour_m2" href="#">M2.5+ Earthquakes</a></li> 
+				<li><a id="past_hour_m1" href="#">M1.0+ Earthquakes</a></li>
+				<li><a id="past_hour_all" href="#">All Earthquakes</a></li>
+			</ul>
+		</div>
+
+		<div class="sis-filter">
+			<h2>Último día</h2>
+			<ul>
+				<li><a id="past_day_m4" href="#">M4.5+ Earthquakes</a></li>
+				<li><a id="past_day_m2" href="#">M2.5+ Earthquakes</a></li> 
+				<li><a id="past_day_m1" href="#">M1.0+ Earthquakes</a></li>
+				<li><a id="past_day_all" href="#">All Earthquakes</a></li>
+			</ul>
+		</div>
+		
+		<div class="sis-filter">
+			<h2>Últimos 7 días</h2>
+			<ul>
+				<li><a id="past_7_days_m4" href="#">M4.5+ Earthquakes</a></li>
+				<li><a id="past_7_days_m2" href="#">M2.5+ Earthquakes</a></li> 
+				<li><a id="past_7_days_m1" href="#">M1.0+ Earthquakes</a></li>
+				<li><a id="past_7_days_all" href="#">All Earthquakes</a></li>
+			</uall
+		</div>
+	</section>
+
+	<!--script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYPB4BPEuFtyP2z4uTqyBTNB48WD5AaWo&libraries=geometry,visualization"></script-->
+	<script src="https://maps.googleapis.com/maps/api/js?libraries=visualization"></script>
+	<script src="js/main.js"></script>
+</body>
