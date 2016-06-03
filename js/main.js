@@ -18,37 +18,25 @@ function peticionAjax(url) {
 		if (xmlHttp.readyState === 4) {
 			if (xmlHttp.status >= 100 && xmlHttp.status <= 300) {
 						
-						datos = JSON.parse(xmlHttp.responseText);
-						console.log( "La solicitud se ha completado correctamente." );
-						console.info(datos);
+				datos = JSON.parse(xmlHttp.responseText);
+				console.info( "La solicitud se ha completado correctamente." );
+				console.info(datos);
+			
+				if (datos.length !== null && datos.length !== 0) {
+					document.getElementById('sis_cargando').style.display = 'none';
 
-						var contenido = '';
-						
-						// Inicializamos Mapa de Google
-						
-
-						if (datos.length != 0) {
-
-							document.getElementById('sis_cargando').style.display = 'none';
-
-
-							for (var i= 0; i < datos.features.length; i++ ) {
-								dibujarMapa(datos.features[i]);
-								//contenido += dibujarHTML(datos.features[i]);
-							}
-
-							//document.body.innerHTML = contenido;
-							//document.querySelector('#sis_info > div').innerHTML = contenido;
-						}
-						
-						else {
-							console.warn('No ha habido ningún simo !!!')
-						}
-					
-						
-			} else if (xmlHttp.status >= 400 && xmlHttp.status <= 600) {
-				errorDatos(JSON.parse(xmlHttp.responseText));
+					for (var i= 0; i < datos.features.length; i++ ) {
+						dibujarMapa(datos.features[i]);
+					}
+				}
+				
+				else {
+					console.warn('No ha habido ningún simo !!!')
+				}					
 			}
+			else if (xmlHttp.status >= 400 && xmlHttp.status <= 600) {
+				errorDatos(JSON.parse(xmlHttp.responseText));
+			}	
 		}
 	};
 	xmlHttp.open("GET", url, true);
@@ -169,8 +157,7 @@ function formatearFechaMiZonaHoraria(time) {
 function errorDatos(error) {
 	document.getElementById('sis_cargando').style.display = 'none';
 	document.getElementById('sis_error').style.display = 'block';
-	document.querySelector('sis-error>div').innerHTML = '<img src="http://www.404notfound.fr/assets/images/pages/img/androiddev101.jpg">';
-	console.error('ERROR! 404', error)
+	console.error('ERROR! 404', error);
 }
 
 
@@ -247,6 +234,11 @@ document.getElementById("past_7_days_m1").addEventListener('click', function() {
 });
 document.getElementById("past_7_days_all").addEventListener('click', function() {
 	var url = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson';
+	
+});
+
+document.getElementById("btn_cerrar").addEventListener('click', function() {
+	document.getElementById("sis_error").style.display = 'none';
 	
 });
 

@@ -38,6 +38,7 @@
 	<meta name="theme-color" content="#ffffff">
 </head>
 <body>
+	
 	<header>
 		<div class="sis-wrapper">
 			<h1 class="sis-logo">
@@ -46,11 +47,8 @@
 					<span>Earthquake</span>
 				</a>
 			</h1>
-		</div><!-- /.sis-wrapper -->
+		</div>
 	</header>
-
-	
-
 
 	<section id="sis_map" class="sis-map">
 		<div id="map_epicenter" class="sis-map-epicenter"></div><!-- /#map_epicenter -->
@@ -63,7 +61,17 @@
 				<div class="rect5"></div>
 			</div>
 		</div><!-- /#sis_cargando -->
-	</section><!-- /.sis-info -->
+	</section><!-- /.sis-map -->
+
+	<section id="sis_error" class="sis-error">
+		<div class="sis-wrapper">
+			<div class="sis-msg-error">
+				<a id="btn_cerrar" href="#" class="sis-btn">cerrar</a>
+				<img src="http://www.404notfound.fr/assets/images/pages/img/androiddev101.jpg">	
+			</div>
+			
+		</div>
+	</section><!-- /#sis_error.sis-error -->
 
 	<section class="sis-filters">
 		<div class="sis-filter">
@@ -95,7 +103,8 @@
 				<li><a id="past_7_days_all" href="#">All Earthquakes</a></li>
 			</uall
 		</div>
-	</section>
+	</section><!-- /.sis-filters -->
+
 
 	<!--script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYPB4BPEuFtyP2z4uTqyBTNB48WD5AaWo&libraries=geometry,visualization"></script-->
 	<script src="https://maps.googleapis.com/maps/api/js?libraries=visualization"></script>
